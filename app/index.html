@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TrueDrop — Real Black Friday &amp; Cyber Monday 2026 Deal Finder</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">TD</div>
+          <div>
+            <h1>TrueDrop</h1>
+            <p>Verified Black Friday &amp; Cyber Monday 2026 deals — audited against real street prices</p>
+          </div>
+        </div>
+        <div class="verdict-legend" aria-label="Deal verdict guide">
+          <span class="verdict-badge verdict-badge--low">All-Time Low</span>
+          <span class="verdict-badge verdict-badge--strong">Strong Deal</span>
+          <span class="verdict-badge verdict-badge--routine">Routine Sale</span>
+          <span class="verdict-badge verdict-badge--warn">Inflated MSRP</span>
+        </div>
+      </div>
+      <div id="stats-bar" class="stats-bar" aria-live="polite"></div>
+    </header>
+
+    <main class="main-wrap">
+      <section class="controls-panel" aria-label="Search and filter deals">
+        <div class="controls-row">
+          <div class="search-box">
+            <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.5-3.5"></path>
+            </svg>
+            <input id="search-input" type="search" placeholder="Search product, brand, store… (press /)" aria-label="Search deals" />
+          </div>
+
+          <select id="store-select" aria-label="Filter by store">
+            <option value="All">All stores</option>
+          </select>
+
+          <select id="discount-select" aria-label="Minimum discount">
+            <option value="0">Any discount</option>
+            <option value="20">20%+ off</option>
+            <option value="30">30%+ off</option>
+            <option value="40">40%+ off</option>
+            <option value="50">50%+ off</option>
+          </select>
+
+          <select id="verdict-select" aria-label="Filter by verdict">
+            <option value="All">All verdicts</option>
+            <option value="all-time-low">All-Time Low</option>
+            <option value="strong-deal">Strong Deal</option>
+            <option value="routine-sale">Routine Sale</option>
+            <option value="inflated-msrp">Inflated MSRP</option>
+          </select>
+
+          <select id="sort-select" aria-label="Sort deals">
+            <option value="score-desc">Best Deal Score</option>
+            <option value="discount-desc">Highest % Off</option>
+            <option value="savings-desc">Biggest $ Savings</option>
+            <option value="price-asc">Lowest Price</option>
+            <option value="price-desc">Highest Price</option>
+          </select>
+
+          <button id="reset-btn" type="button" class="btn btn--ghost">Reset</button>
+        </div>
+
+        <div class="controls-secondary">
+          <div id="category-pills" class="category-pills" role="group" aria-label="Category filter"></div>
+          <label class="toggle-label">
+            <input id="compared-toggle" type="checkbox" />
+            <span>Cross-store compared only</span>
+          </label>
+        </div>
+      </section>
+
+      <p id="active-filter-summary" class="active-summary"></p>
+      <section id="deal-grid" class="deal-grid" aria-label="Verified deals"></section>
+    </main>
+
+    <dialog id="deal-modal" class="deal-modal" aria-label="Deal audit details">
+      <div id="modal-body" class="modal-body"></div>
+    </dialog>
+
+    <footer class="site-footer">
+      <span>TrueDrop · Independent Black Friday &amp; Cyber Monday 2026 Price Audit</span>
+      <span>All discounts computed from checked sale price vs usual price · Static offline-first build</span>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
